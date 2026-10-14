@@ -288,7 +288,9 @@ class Tools:
                 ),
                 "args": {
                     "file_id": "Required catalog file identifier",
-                    "max_chars": "Optional integer up to 12000"
+                    "max_chars": "Optional integer up to 12000",
+                    "focus": "Optional: what to look for in the document; the pages, slides or blocks that best match "
+                             "it are returned (default: the question)"
                 }
             },
             {
@@ -330,6 +332,49 @@ class Tools:
             yield conn
         finally:
             conn.close()
+    _STOP=set('the a an and or of on in to for with what whats what\'s is are was were do does did how which who when where '
+              'about from that this these those our we you your it its by at as be can any there'.split())
+
+    def _focus_words(self,focus):
+        words=[w for w in re.findall(r'[a-z0-9][a-z0-9.%-]*',focus.lower()) if len(w)>1 and w not in self._STOP]
+        try:
+            import sqlite3 as _sq
+            from metadata import terminology
+            con=_sq.connect(f'file:{Path(self.cfg.metadata_db).resolve().as_posix()}?mode=ro',uri=True)
+            try:
+                vocab=[{'term':r[0],'canonical':r[1]} for r in con.execute('SELECT term,canonical_term FROM terminology')]
+            finally:
+                con.close()
+            words+=terminology.expand(focus,terminology.groups(vocab)) if vocab else []
+        except Exception:
+            pass
+        return list(dict.fromkeys(words))
+
+    def _focused_units(self,every,kind,focus,max_chars):
+        """Tuned fork (fix 4): the units (pages, slides, blocks) that best match the focus, returned in document order
+        within max_chars, each with its own locator so citations stay exact. A unit scores one point for each focus
+        word it contains, a little more for repeats, and half a point if it states a figure. The first unit is kept
+        when there is room, as it usually carries the title."""
+        words=self._focus_words(focus)
+        def norm(t): return re.sub(r'\s+',' ',re.sub(r'[/_\-]+',' ',t.lower()))
+        scored=[]
+        for pos,(index,text) in enumerate(every):
+            t=norm(text)
+            hits=[t.count(norm(w)) for w in words if norm(w) and norm(w) in t]
+            score=len(hits)+0.25*sum(min(h,4)-1 for h in hits)+(0.5 if re.search(r'\d',text) else 0)
+            scored.append((score,pos,index,text))
+        chosen,used=[],0
+        for score,pos,index,text in sorted(scored,key=lambda x:(-x[0],x[1])):
+            if used>=max_chars or score<=0.5: break
+            excerpt=text[:max_chars-used]
+            chosen.append((pos,index,excerpt)); used+=len(excerpt)
+        if every and 0 not in [p for p,_,_ in chosen] and used<max_chars:
+            first=every[0][1][:min(600,max_chars-used)]
+            chosen.append((0,every[0][0],first)); used+=len(first)
+        chosen.sort()
+        units=[{'locator':{kind:index},'text':excerpt} for _,index,excerpt in chosen]
+        return units,{'mode':'focused','focus':focus[:200],'units_total':len(every),'units_returned':len(units)}
+
     def run(self,name,args):
         if not isinstance(args,dict): raise AgentError('INVALID_ARGUMENTS')
         if name=='discover_schema':
@@ -471,20 +516,29 @@ class Tools:
             ext=path.suffix.lower()
             if ext in ('.txt','.md','.json','.csv'):
                 units=[{'locator':{'line':1},'text':path.read_text(encoding='utf-8',errors='replace')[:max_chars]}]
+                selection={'mode':'whole_text'}
             else:
                 readers={'.pdf':(_pdf_pages,'page'),'.docx':(_docx_blocks,'block'),
                          '.pptx':(_pptx_slides,'slide'),'.msg':(_msg_parts,'message')}
                 if ext not in readers:raise AgentError('DOCUMENT_FORMAT_NOT_SUPPORTED')
                 reader,kind=readers[ext]
-                units=[];used=0
-                for index,text in reader(path,100):
-                    if used>=max_chars:break
-                    excerpt=str(text)[:max_chars-used]
-                    units.append({'locator':{kind:index},'text':excerpt})
-                    used+=len(excerpt)
+                every=[(index,str(text)) for index,text in reader(path,200)]
+                focus=str(args.get('focus') or getattr(self,'_focus','') or '')[:500]
+                if focus and sum(len(t) for _,t in every)>max_chars:
+                    # Tuned fork (fix 4): a document longer than max_chars is read where it answers, not from the top.
+                    units,selection=self._focused_units(every,kind,focus,max_chars)
+                else:
+                    units=[];used=0
+                    for index,text in every[:100]:
+                        if used>=max_chars:break
+                        excerpt=str(text)[:max_chars-used]
+                        units.append({'locator':{kind:index},'text':excerpt})
+                        used+=len(excerpt)
+                    selection={'mode':'from_start','units_total':len(every),'units_returned':len(units)}
             indexed=MetadataRetrieval(self.cfg.metadata_db).document_units(file_id)
             return {'file_id':file_id,'indexed_sections':indexed['sections'],
                     'indexed_objects':indexed['objects'],'units':units,
+                    'selection':selection,
                     'name':row['file_name'],'content':'\n'.join(u['text'] for u in units),
                     'document_date':row['document_date'],
                     'citation':'document:'+file_id,'pit_certified':False,
@@ -1289,6 +1343,7 @@ physical columns; return {"unresolved":true} if ambiguous. No tools here.
                 raise AgentError("INVALID_AS_OF") from exc
 
         trace, evidence = [], []
+        self.tools._focus = query          # tuned fork (fix 4): inspect_document reads where the question is answered
         self._verified_bindings = {}
         self._binding_errors = {}
         request_id = uuid.uuid4().hex[:12]
