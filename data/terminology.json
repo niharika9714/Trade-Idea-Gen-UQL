@@ -1,0 +1,3157 @@
+[
+{
+"term": "xauusd",
+"canonical": "gold",
+"scope": "market"
+},
+{
+"term": "xau",
+"canonical": "gold",
+"scope": "market"
+},
+{
+"term": "bullion",
+"canonical": "gold",
+"scope": "market"
+},
+{
+"term": "xagusd",
+"canonical": "silver",
+"scope": "market"
+},
+{
+"term": "xag",
+"canonical": "silver",
+"scope": "market"
+},
+{
+"term": "yen",
+"canonical": "usdjpy",
+"scope": "market"
+},
+{
+"term": "aussie",
+"canonical": "audusd",
+"scope": "market"
+},
+{
+"term": "swissy",
+"canonical": "usdchf",
+"scope": "market"
+},
+{
+"term": "sing dollar",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "singapore dollar",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "yuan",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "renminbi",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "rmb",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "crude",
+"canonical": "oil",
+"scope": "market"
+},
+{
+"term": "brent",
+"canonical": "oil",
+"scope": "market"
+},
+{
+"term": "wti",
+"canonical": "oil",
+"scope": "market"
+},
+{
+"term": "dollar index",
+"canonical": "dxy",
+"scope": "market"
+},
+{
+"term": "xpdusd",
+"canonical": "palladium",
+"scope": "market"
+},
+{
+"term": "xpd",
+"canonical": "palladium",
+"scope": "market"
+},
+{
+"term": "xptusd",
+"canonical": "platinum",
+"scope": "market"
+},
+{
+"term": "xpt",
+"canonical": "platinum",
+"scope": "market"
+},
+{
+"term": "gold in sgd",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "gold in singapore dollars",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "gold in cnh",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold in renminbi",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold-silver ratio",
+"canonical": "xauxag",
+"scope": "market"
+},
+{
+"term": "gold silver ratio",
+"canonical": "xauxag",
+"scope": "market"
+},
+{
+"term": "aluminum",
+"canonical": "aluminium",
+"scope": "market"
+},
+{
+"term": "iron_ore",
+"canonical": "iron ore",
+"scope": "market"
+},
+{
+"term": "liquefied natural gas",
+"canonical": "lng",
+"scope": "market"
+},
+{
+"term": "jkm",
+"canonical": "lng",
+"scope": "market"
+},
+{
+"term": "thermal coal",
+"canonical": "coal",
+"scope": "market"
+},
+{
+"term": "newcastle coal",
+"canonical": "coal",
+"scope": "market"
+},
+{
+"term": "amazon",
+"canonical": "amzn",
+"scope": "market"
+},
+{
+"term": "apple",
+"canonical": "aapl",
+"scope": "market"
+},
+{
+"term": "nvidia",
+"canonical": "nvda",
+"scope": "market"
+},
+{
+"term": "broadcom",
+"canonical": "avgo",
+"scope": "market"
+},
+{
+"term": "netflix",
+"canonical": "nflx",
+"scope": "market"
+},
+{
+"term": "exxon",
+"canonical": "xom",
+"scope": "market"
+},
+{
+"term": "exxon mobil",
+"canonical": "xom",
+"scope": "market"
+},
+{
+"term": "eli lilly",
+"canonical": "lly",
+"scope": "market"
+},
+{
+"term": "unitedhealth",
+"canonical": "unh",
+"scope": "market"
+},
+{
+"term": "samsung electronics",
+"canonical": "samsung",
+"scope": "market"
+},
+{
+"term": "russell 2000",
+"canonical": "rty",
+"scope": "market"
+},
+{
+"term": "russell",
+"canonical": "rty",
+"scope": "market"
+},
+{
+"term": "nifty 50",
+"canonical": "nifty",
+"scope": "market"
+},
+{
+"term": "ftse 100",
+"canonical": "ftse",
+"scope": "market"
+},
+{
+"term": "gold miners",
+"canonical": "gdx",
+"scope": "market"
+},
+{
+"term": "30-year treasury",
+"canonical": "ust30y",
+"scope": "market"
+},
+{
+"term": "long bond",
+"canonical": "ust30y",
+"scope": "market"
+},
+{
+"term": "5-year treasury",
+"canonical": "ust5y",
+"scope": "market"
+},
+{
+"term": "itraxx crossover",
+"canonical": "itraxx_xover",
+"scope": "market"
+},
+{
+"term": "crossover",
+"canonical": "itraxx_xover",
+"scope": "market"
+},
+{
+"term": "xover",
+"canonical": "itraxx_xover",
+"scope": "market"
+},
+{
+"term": "itraxx asia",
+"canonical": "itraxx_asia",
+"scope": "market"
+},
+{
+"term": "worst of autocallable",
+"canonical": "worst-of autocallable",
+"scope": "product"
+},
+{
+"term": "worst-of",
+"canonical": "worst-of autocallable",
+"scope": "product"
+},
+{
+"term": "knock-in knock-out",
+"canonical": "kiko",
+"scope": "product"
+},
+{
+"term": "wedding cake structured deposit",
+"canonical": "wedding cake",
+"scope": "product"
+},
+{
+"term": "deposit-plus",
+"canonical": "deposit plus",
+"scope": "product"
+},
+{
+"term": "twin win",
+"canonical": "twin-win",
+"scope": "product"
+},
+{
+"term": "airbag",
+"canonical": "airbag note",
+"scope": "product"
+},
+{
+"term": "bonus cert",
+"canonical": "bonus certificate",
+"scope": "product"
+},
+{
+"term": "outperformance cert",
+"canonical": "outperformance certificate",
+"scope": "product"
+},
+{
+"term": "covered call overlay",
+"canonical": "covered call",
+"scope": "product"
+},
+{
+"term": "call overwriting",
+"canonical": "covered call",
+"scope": "product"
+},
+{
+"term": "put write overlay",
+"canonical": "put-write",
+"scope": "product"
+},
+{
+"term": "cash-secured put",
+"canonical": "put-write",
+"scope": "product"
+},
+{
+"term": "collar forward",
+"canonical": "range forward",
+"scope": "product"
+},
+{
+"term": "one-touch",
+"canonical": "touch option",
+"scope": "product"
+},
+{
+"term": "no-touch",
+"canonical": "touch option",
+"scope": "product"
+},
+{
+"term": "var swap",
+"canonical": "variance swap",
+"scope": "product"
+},
+{
+"term": "perp",
+"canonical": "perpetual bond",
+"scope": "product"
+},
+{
+"term": "2s10s",
+"canonical": "curve trade",
+"scope": "product"
+},
+{
+"term": "steepener",
+"canonical": "curve trade",
+"scope": "product"
+},
+{
+"term": "flattener",
+"canonical": "curve trade",
+"scope": "product"
+},
+{
+"term": "accu",
+"canonical": "accumulator",
+"scope": "product"
+},
+{
+"term": "aq",
+"canonical": "accumulator",
+"scope": "product"
+},
+{
+"term": "dcl",
+"canonical": "dual currency loan",
+"scope": "product"
+},
+{
+"term": "dual currency investment",
+"canonical": "dual currency note",
+"scope": "product"
+},
+{
+"term": "dci",
+"canonical": "dual currency note",
+"scope": "product"
+},
+{
+"term": "dcn",
+"canonical": "dual currency note",
+"scope": "product"
+},
+{
+"term": "ran",
+"canonical": "range accrual note",
+"scope": "product"
+},
+{
+"term": "callable ran",
+"canonical": "callable range accrual note",
+"scope": "product"
+},
+{
+"term": "cran",
+"canonical": "callable range accrual note",
+"scope": "product"
+},
+{
+"term": "double no-touch",
+"canonical": "double no touch",
+"scope": "product"
+},
+{
+"term": "dnt",
+"canonical": "double no touch",
+"scope": "product"
+},
+{
+"term": "fcn",
+"canonical": "fixed coupon note",
+"scope": "product"
+},
+{
+"term": "tarf",
+"canonical": "target redemption forward",
+"scope": "product"
+},
+{
+"term": "knock out",
+"canonical": "knock-out",
+"scope": "term"
+},
+{
+"term": "ko",
+"canonical": "knock-out",
+"scope": "term"
+},
+{
+"term": "knock in",
+"canonical": "knock-in",
+"scope": "term"
+},
+{
+"term": "ki",
+"canonical": "knock-in",
+"scope": "term"
+},
+{
+"term": "cpn",
+"canonical": "coupon",
+"scope": "term"
+},
+{
+"term": "p.a.",
+"canonical": "per annum",
+"scope": "term"
+},
+{
+"term": "annualised",
+"canonical": "per annum",
+"scope": "term"
+},
+{
+"term": "annualized",
+"canonical": "per annum",
+"scope": "term"
+},
+{
+"term": "lme copper",
+"canonical": "copper",
+"scope": "market"
+},
+{
+"term": "natgas",
+"canonical": "natural gas",
+"scope": "market"
+},
+{
+"term": "henry hub",
+"canonical": "natural gas",
+"scope": "market"
+},
+{
+"term": "sterling",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "cable",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "kiwi",
+"canonical": "nzdusd",
+"scope": "market"
+},
+{
+"term": "loonie",
+"canonical": "usdcad",
+"scope": "market"
+},
+{
+"term": "rupee",
+"canonical": "usdinr",
+"scope": "market"
+},
+{
+"term": "korean won",
+"canonical": "usdkrw",
+"scope": "market"
+},
+{
+"term": "baht",
+"canonical": "usdthb",
+"scope": "market"
+},
+{
+"term": "ringgit",
+"canonical": "usdmyr",
+"scope": "market"
+},
+{
+"term": "rupiah",
+"canonical": "usdidr",
+"scope": "market"
+},
+{
+"term": "hong kong dollar",
+"canonical": "usdhkd",
+"scope": "market"
+},
+{
+"term": "secured overnight financing rate",
+"canonical": "sofr",
+"scope": "market"
+},
+{
+"term": "singapore overnight rate average",
+"canonical": "sora",
+"scope": "market"
+},
+{
+"term": "non deliverable forward",
+"canonical": "non-deliverable forward",
+"scope": "product"
+},
+{
+"term": "ndf",
+"canonical": "non-deliverable forward",
+"scope": "product"
+},
+{
+"term": "cross currency swap",
+"canonical": "cross-currency swap",
+"scope": "product"
+},
+{
+"term": "ccs",
+"canonical": "cross-currency swap",
+"scope": "product"
+},
+{
+"term": "irs",
+"canonical": "interest rate swap",
+"scope": "product"
+},
+{
+"term": "risk reversal",
+"canonical": "fx collar",
+"scope": "product"
+},
+{
+"term": "collar",
+"canonical": "fx collar",
+"scope": "product"
+},
+{
+"term": "autocallable",
+"canonical": "autocallable note",
+"scope": "product"
+},
+{
+"term": "autocall",
+"canonical": "autocallable note",
+"scope": "product"
+},
+{
+"term": "vanilla option",
+"canonical": "vanilla fx option",
+"scope": "product"
+},
+{
+"term": "fx option",
+"canonical": "vanilla fx option",
+"scope": "product"
+},
+{
+"term": "spx",
+"canonical": "s&p 500",
+"scope": "market"
+},
+{
+"term": "sp500",
+"canonical": "s&p 500",
+"scope": "market"
+},
+{
+"term": "nasdaq",
+"canonical": "nasdaq 100",
+"scope": "market"
+},
+{
+"term": "ndx",
+"canonical": "nasdaq 100",
+"scope": "market"
+},
+{
+"term": "hsi",
+"canonical": "hang seng",
+"scope": "market"
+},
+{
+"term": "sti",
+"canonical": "straits times index",
+"scope": "market"
+},
+{
+"term": "nky",
+"canonical": "nikkei",
+"scope": "market"
+},
+{
+"term": "nikkei 225",
+"canonical": "nikkei",
+"scope": "market"
+},
+{
+"term": "amzn",
+"canonical": "amazon",
+"scope": "market"
+},
+{
+"term": "aapl",
+"canonical": "apple",
+"scope": "market"
+},
+{
+"term": "nvda",
+"canonical": "nvidia",
+"scope": "market"
+},
+{
+"term": "treasuries",
+"canonical": "treasury",
+"scope": "market"
+},
+{
+"term": "ust",
+"canonical": "treasury",
+"scope": "market"
+},
+{
+"term": "t-note",
+"canonical": "treasury",
+"scope": "market"
+},
+{
+"term": "sgs",
+"canonical": "singapore government securities",
+"scope": "market"
+},
+{
+"term": "cds",
+"canonical": "credit default swap",
+"scope": "product"
+},
+{
+"term": "credit linked note",
+"canonical": "credit-linked note",
+"scope": "product"
+},
+{
+"term": "cln",
+"canonical": "credit-linked note",
+"scope": "product"
+},
+{
+"term": "equity linked note",
+"canonical": "equity-linked note",
+"scope": "product"
+},
+{
+"term": "eln",
+"canonical": "equity-linked note",
+"scope": "product"
+},
+{
+"term": "buy-write",
+"canonical": "covered call",
+"scope": "product"
+},
+{
+"term": "buy write",
+"canonical": "covered call",
+"scope": "product"
+},
+{
+"term": "cash secured put",
+"canonical": "cash-secured put",
+"scope": "product"
+},
+{
+"term": "csp",
+"canonical": "cash-secured put",
+"scope": "product"
+},
+{
+"term": "rcn",
+"canonical": "reverse convertible",
+"scope": "product"
+},
+{
+"term": "protect the downside",
+"canonical": "downside protection",
+"scope": "term"
+},
+{
+"term": "protect downside",
+"canonical": "downside protection",
+"scope": "term"
+},
+{
+"term": "protective put",
+"canonical": "downside protection",
+"scope": "term"
+},
+{
+"term": "protective puts",
+"canonical": "downside protection",
+"scope": "term"
+},
+{
+"term": "put option",
+"canonical": "downside protection",
+"scope": "term"
+},
+{
+"term": "put options",
+"canonical": "downside protection",
+"scope": "term"
+},
+{
+"term": "buy put",
+"canonical": "downside protection",
+"scope": "term"
+},
+{
+"term": "buy puts",
+"canonical": "downside protection",
+"scope": "term"
+},
+{
+"term": "put spread",
+"canonical": "downside protection",
+"scope": "term"
+},
+{
+"term": "put spreads",
+"canonical": "downside protection",
+"scope": "term"
+},
+{
+"term": "euro",
+"canonical": "eurusd",
+"scope": "market"
+},
+{
+"term": "taiwan dollar",
+"canonical": "usdtwd",
+"scope": "market"
+},
+{
+"term": "peso",
+"canonical": "usdphp",
+"scope": "market"
+},
+{
+"term": "philippine peso",
+"canonical": "usdphp",
+"scope": "market"
+},
+{
+"term": "dong",
+"canonical": "usdvnd",
+"scope": "market"
+},
+{
+"term": "taka",
+"canonical": "usdbdt",
+"scope": "market"
+},
+{
+"term": "sri lankan rupee",
+"canonical": "usdlkr",
+"scope": "market"
+},
+{
+"term": "euro-yen",
+"canonical": "eurjpy",
+"scope": "market"
+},
+{
+"term": "euro yen",
+"canonical": "eurjpy",
+"scope": "market"
+},
+{
+"term": "euro-sterling",
+"canonical": "eurgbp",
+"scope": "market"
+},
+{
+"term": "euro sterling",
+"canonical": "eurgbp",
+"scope": "market"
+},
+{
+"term": "aussie-yen",
+"canonical": "audjpy",
+"scope": "market"
+},
+{
+"term": "aussie yen",
+"canonical": "audjpy",
+"scope": "market"
+},
+{
+"term": "sterling-yen",
+"canonical": "gbpjpy",
+"scope": "market"
+},
+{
+"term": "sterling yen",
+"canonical": "gbpjpy",
+"scope": "market"
+},
+{
+"term": "euro-sing",
+"canonical": "eursgd",
+"scope": "market"
+},
+{
+"term": "euro sing",
+"canonical": "eursgd",
+"scope": "market"
+},
+{
+"term": "aussie-sing",
+"canonical": "audsgd",
+"scope": "market"
+},
+{
+"term": "aussie sing",
+"canonical": "audsgd",
+"scope": "market"
+},
+{
+"term": "euro-swiss",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "euro swiss",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "euro-aussie",
+"canonical": "euraud",
+"scope": "market"
+},
+{
+"term": "euro aussie",
+"canonical": "euraud",
+"scope": "market"
+},
+{
+"term": "euro-kiwi",
+"canonical": "eurnzd",
+"scope": "market"
+},
+{
+"term": "euro kiwi",
+"canonical": "eurnzd",
+"scope": "market"
+},
+{
+"term": "sterling-aussie",
+"canonical": "gbpaud",
+"scope": "market"
+},
+{
+"term": "sterling aussie",
+"canonical": "gbpaud",
+"scope": "market"
+},
+{
+"term": "sterling-swiss",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "sterling swiss",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "sterling-sing",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "sterling sing",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "aussie-kiwi",
+"canonical": "audnzd",
+"scope": "market"
+},
+{
+"term": "aussie kiwi",
+"canonical": "audnzd",
+"scope": "market"
+},
+{
+"term": "kiwi-yen",
+"canonical": "nzdjpy",
+"scope": "market"
+},
+{
+"term": "kiwi yen",
+"canonical": "nzdjpy",
+"scope": "market"
+},
+{
+"term": "loonie-yen",
+"canonical": "cadjpy",
+"scope": "market"
+},
+{
+"term": "loonie yen",
+"canonical": "cadjpy",
+"scope": "market"
+},
+{
+"term": "swiss-yen",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "swiss yen",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "sing-yen",
+"canonical": "sgdjpy",
+"scope": "market"
+},
+{
+"term": "sing yen",
+"canonical": "sgdjpy",
+"scope": "market"
+},
+{
+"term": "sing-yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar-yuan",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "euro-hong kong dollar",
+"canonical": "eurhkd",
+"scope": "market"
+},
+{
+"term": "won",
+"canonical": "usdkrw",
+"scope": "market"
+},
+{
+"term": "gold in offshore renminbi",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold in yen",
+"canonical": "xaujpy",
+"scope": "market"
+},
+{
+"term": "gold in euro",
+"canonical": "xaueur",
+"scope": "market"
+},
+{
+"term": "wti crude",
+"canonical": "wti",
+"scope": "market"
+},
+{
+"term": "newcastle thermal coal",
+"canonical": "coal",
+"scope": "market"
+},
+{
+"term": "spdr s&p 500 etf",
+"canonical": "spy",
+"scope": "market"
+},
+{
+"term": "invesco qqq",
+"canonical": "qqq",
+"scope": "market"
+},
+{
+"term": "spdr gold shares",
+"canonical": "gld",
+"scope": "market"
+},
+{
+"term": "ishares russell 2000 etf",
+"canonical": "iwm",
+"scope": "market"
+},
+{
+"term": "ishares msci emerging markets etf",
+"canonical": "eem",
+"scope": "market"
+},
+{
+"term": "ishares 20+ year treasury bond etf",
+"canonical": "tlt",
+"scope": "market"
+},
+{
+"term": "ishares high yield corporate bond etf",
+"canonical": "hyg",
+"scope": "market"
+},
+{
+"term": "technology select sector spdr",
+"canonical": "xlk",
+"scope": "market"
+},
+{
+"term": "ishares gold trust",
+"canonical": "iau",
+"scope": "market"
+},
+{
+"term": "vaneck gold miners etf",
+"canonical": "gdx",
+"scope": "market"
+},
+{
+"term": "us 2-year treasury",
+"canonical": "ust2y",
+"scope": "market"
+},
+{
+"term": "us 5-year treasury",
+"canonical": "ust5y",
+"scope": "market"
+},
+{
+"term": "us 30-year treasury",
+"canonical": "ust30y",
+"scope": "market"
+},
+{
+"term": "sgs 2-year",
+"canonical": "sgs2y",
+"scope": "market"
+},
+{
+"term": "sgs 5-year",
+"canonical": "sgs5y",
+"scope": "market"
+},
+{
+"term": "german 2-year schatz",
+"canonical": "bund2y",
+"scope": "market"
+},
+{
+"term": "schatz",
+"canonical": "bund2y",
+"scope": "market"
+},
+{
+"term": "jgb 2-year",
+"canonical": "jgb2y",
+"scope": "market"
+},
+{
+"term": "uk 2-year gilt",
+"canonical": "gilt2y",
+"scope": "market"
+},
+{
+"term": "german 10-year bund",
+"canonical": "bund10y",
+"scope": "market"
+},
+{
+"term": "jgb 10-year",
+"canonical": "jgb10y",
+"scope": "market"
+},
+{
+"term": "uk 10-year gilt",
+"canonical": "gilt10y",
+"scope": "market"
+},
+{
+"term": "australian 10-year",
+"canonical": "australia10y",
+"scope": "market"
+},
+{
+"term": "china 10-year government bond",
+"canonical": "china10y",
+"scope": "market"
+},
+{
+"term": "india 10-year government bond",
+"canonical": "india10y",
+"scope": "market"
+},
+{
+"term": "cdx investment grade",
+"canonical": "cdx_ig",
+"scope": "market"
+},
+{
+"term": "cdx high yield",
+"canonical": "cdx_hy",
+"scope": "market"
+},
+{
+"term": "itraxx main",
+"canonical": "itraxx_main",
+"scope": "market"
+},
+{
+"term": "itraxx asia ex-japan",
+"canonical": "itraxx_asia",
+"scope": "market"
+},
+{
+"term": "aud/jpy",
+"canonical": "audjpy",
+"scope": "market"
+},
+{
+"term": "aud-jpy",
+"canonical": "audjpy",
+"scope": "market"
+},
+{
+"term": "aud jpy",
+"canonical": "audjpy",
+"scope": "market"
+},
+{
+"term": "aussie/yen",
+"canonical": "audjpy",
+"scope": "market"
+},
+{
+"term": "aud/nzd",
+"canonical": "audnzd",
+"scope": "market"
+},
+{
+"term": "aud-nzd",
+"canonical": "audnzd",
+"scope": "market"
+},
+{
+"term": "aud nzd",
+"canonical": "audnzd",
+"scope": "market"
+},
+{
+"term": "aussie/kiwi",
+"canonical": "audnzd",
+"scope": "market"
+},
+{
+"term": "aud/sgd",
+"canonical": "audsgd",
+"scope": "market"
+},
+{
+"term": "aud-sgd",
+"canonical": "audsgd",
+"scope": "market"
+},
+{
+"term": "aud sgd",
+"canonical": "audsgd",
+"scope": "market"
+},
+{
+"term": "aussie-sing dollar",
+"canonical": "audsgd",
+"scope": "market"
+},
+{
+"term": "aussie sing dollar",
+"canonical": "audsgd",
+"scope": "market"
+},
+{
+"term": "aussie/sing dollar",
+"canonical": "audsgd",
+"scope": "market"
+},
+{
+"term": "aussie/sing",
+"canonical": "audsgd",
+"scope": "market"
+},
+{
+"term": "aud/usd",
+"canonical": "audusd",
+"scope": "market"
+},
+{
+"term": "aud-usd",
+"canonical": "audusd",
+"scope": "market"
+},
+{
+"term": "aud usd",
+"canonical": "audusd",
+"scope": "market"
+},
+{
+"term": "aussie-dollar",
+"canonical": "audusd",
+"scope": "market"
+},
+{
+"term": "aussie dollar",
+"canonical": "audusd",
+"scope": "market"
+},
+{
+"term": "aussie/dollar",
+"canonical": "audusd",
+"scope": "market"
+},
+{
+"term": "cad/jpy",
+"canonical": "cadjpy",
+"scope": "market"
+},
+{
+"term": "cad-jpy",
+"canonical": "cadjpy",
+"scope": "market"
+},
+{
+"term": "cad jpy",
+"canonical": "cadjpy",
+"scope": "market"
+},
+{
+"term": "loonie/yen",
+"canonical": "cadjpy",
+"scope": "market"
+},
+{
+"term": "chf/jpy",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "chf-jpy",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "chf jpy",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "swissy-yen",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "swissy yen",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "swissy/yen",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "franc-yen",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "franc yen",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "franc/yen",
+"canonical": "chfjpy",
+"scope": "market"
+},
+{
+"term": "eur/aud",
+"canonical": "euraud",
+"scope": "market"
+},
+{
+"term": "eur-aud",
+"canonical": "euraud",
+"scope": "market"
+},
+{
+"term": "eur aud",
+"canonical": "euraud",
+"scope": "market"
+},
+{
+"term": "euro/aussie",
+"canonical": "euraud",
+"scope": "market"
+},
+{
+"term": "eur/chf",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "eur-chf",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "eur chf",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "euro-swissy",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "euro swissy",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "euro/swissy",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "euro-franc",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "euro franc",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "euro/franc",
+"canonical": "eurchf",
+"scope": "market"
+},
+{
+"term": "eur/gbp",
+"canonical": "eurgbp",
+"scope": "market"
+},
+{
+"term": "eur-gbp",
+"canonical": "eurgbp",
+"scope": "market"
+},
+{
+"term": "eur gbp",
+"canonical": "eurgbp",
+"scope": "market"
+},
+{
+"term": "euro/sterling",
+"canonical": "eurgbp",
+"scope": "market"
+},
+{
+"term": "euro-cable",
+"canonical": "eurgbp",
+"scope": "market"
+},
+{
+"term": "euro cable",
+"canonical": "eurgbp",
+"scope": "market"
+},
+{
+"term": "euro/cable",
+"canonical": "eurgbp",
+"scope": "market"
+},
+{
+"term": "eur/hkd",
+"canonical": "eurhkd",
+"scope": "market"
+},
+{
+"term": "eur-hkd",
+"canonical": "eurhkd",
+"scope": "market"
+},
+{
+"term": "eur hkd",
+"canonical": "eurhkd",
+"scope": "market"
+},
+{
+"term": "euro hong kong dollar",
+"canonical": "eurhkd",
+"scope": "market"
+},
+{
+"term": "euro/hong kong dollar",
+"canonical": "eurhkd",
+"scope": "market"
+},
+{
+"term": "eur/jpy",
+"canonical": "eurjpy",
+"scope": "market"
+},
+{
+"term": "eur-jpy",
+"canonical": "eurjpy",
+"scope": "market"
+},
+{
+"term": "eur jpy",
+"canonical": "eurjpy",
+"scope": "market"
+},
+{
+"term": "euro/yen",
+"canonical": "eurjpy",
+"scope": "market"
+},
+{
+"term": "eur/nzd",
+"canonical": "eurnzd",
+"scope": "market"
+},
+{
+"term": "eur-nzd",
+"canonical": "eurnzd",
+"scope": "market"
+},
+{
+"term": "eur nzd",
+"canonical": "eurnzd",
+"scope": "market"
+},
+{
+"term": "euro/kiwi",
+"canonical": "eurnzd",
+"scope": "market"
+},
+{
+"term": "eur/sgd",
+"canonical": "eursgd",
+"scope": "market"
+},
+{
+"term": "eur-sgd",
+"canonical": "eursgd",
+"scope": "market"
+},
+{
+"term": "eur sgd",
+"canonical": "eursgd",
+"scope": "market"
+},
+{
+"term": "euro-sing dollar",
+"canonical": "eursgd",
+"scope": "market"
+},
+{
+"term": "euro sing dollar",
+"canonical": "eursgd",
+"scope": "market"
+},
+{
+"term": "euro/sing dollar",
+"canonical": "eursgd",
+"scope": "market"
+},
+{
+"term": "euro/sing",
+"canonical": "eursgd",
+"scope": "market"
+},
+{
+"term": "eur/usd",
+"canonical": "eurusd",
+"scope": "market"
+},
+{
+"term": "eur-usd",
+"canonical": "eurusd",
+"scope": "market"
+},
+{
+"term": "eur usd",
+"canonical": "eurusd",
+"scope": "market"
+},
+{
+"term": "euro-dollar",
+"canonical": "eurusd",
+"scope": "market"
+},
+{
+"term": "euro dollar",
+"canonical": "eurusd",
+"scope": "market"
+},
+{
+"term": "euro/dollar",
+"canonical": "eurusd",
+"scope": "market"
+},
+{
+"term": "gbp/aud",
+"canonical": "gbpaud",
+"scope": "market"
+},
+{
+"term": "gbp-aud",
+"canonical": "gbpaud",
+"scope": "market"
+},
+{
+"term": "gbp aud",
+"canonical": "gbpaud",
+"scope": "market"
+},
+{
+"term": "sterling/aussie",
+"canonical": "gbpaud",
+"scope": "market"
+},
+{
+"term": "cable-aussie",
+"canonical": "gbpaud",
+"scope": "market"
+},
+{
+"term": "cable aussie",
+"canonical": "gbpaud",
+"scope": "market"
+},
+{
+"term": "cable/aussie",
+"canonical": "gbpaud",
+"scope": "market"
+},
+{
+"term": "gbp/chf",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "gbp-chf",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "gbp chf",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "sterling-swissy",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "sterling swissy",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "sterling/swissy",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "sterling-franc",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "sterling franc",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "sterling/franc",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "cable-swissy",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "cable swissy",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "cable/swissy",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "cable-franc",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "cable franc",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "cable/franc",
+"canonical": "gbpchf",
+"scope": "market"
+},
+{
+"term": "gbp/jpy",
+"canonical": "gbpjpy",
+"scope": "market"
+},
+{
+"term": "gbp-jpy",
+"canonical": "gbpjpy",
+"scope": "market"
+},
+{
+"term": "gbp jpy",
+"canonical": "gbpjpy",
+"scope": "market"
+},
+{
+"term": "sterling/yen",
+"canonical": "gbpjpy",
+"scope": "market"
+},
+{
+"term": "cable-yen",
+"canonical": "gbpjpy",
+"scope": "market"
+},
+{
+"term": "cable yen",
+"canonical": "gbpjpy",
+"scope": "market"
+},
+{
+"term": "cable/yen",
+"canonical": "gbpjpy",
+"scope": "market"
+},
+{
+"term": "gbp/sgd",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "gbp-sgd",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "gbp sgd",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "sterling-sing dollar",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "sterling sing dollar",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "sterling/sing dollar",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "sterling/sing",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "cable-sing dollar",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "cable sing dollar",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "cable/sing dollar",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "cable-sing",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "cable sing",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "cable/sing",
+"canonical": "gbpsgd",
+"scope": "market"
+},
+{
+"term": "gbp/usd",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "gbp-usd",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "gbp usd",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "sterling-dollar",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "sterling dollar",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "sterling/dollar",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "cable-dollar",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "cable dollar",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "cable/dollar",
+"canonical": "gbpusd",
+"scope": "market"
+},
+{
+"term": "hkd/cnh",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hkd-cnh",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hkd cnh",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar yuan",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar/yuan",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar-offshore yuan",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar offshore yuan",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar/offshore yuan",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar-renminbi",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar renminbi",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar/renminbi",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar-rmb",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar rmb",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "hong kong dollar/rmb",
+"canonical": "hkdcnh",
+"scope": "market"
+},
+{
+"term": "nzd/jpy",
+"canonical": "nzdjpy",
+"scope": "market"
+},
+{
+"term": "nzd-jpy",
+"canonical": "nzdjpy",
+"scope": "market"
+},
+{
+"term": "nzd jpy",
+"canonical": "nzdjpy",
+"scope": "market"
+},
+{
+"term": "kiwi/yen",
+"canonical": "nzdjpy",
+"scope": "market"
+},
+{
+"term": "nzd/usd",
+"canonical": "nzdusd",
+"scope": "market"
+},
+{
+"term": "nzd-usd",
+"canonical": "nzdusd",
+"scope": "market"
+},
+{
+"term": "nzd usd",
+"canonical": "nzdusd",
+"scope": "market"
+},
+{
+"term": "kiwi-dollar",
+"canonical": "nzdusd",
+"scope": "market"
+},
+{
+"term": "kiwi dollar",
+"canonical": "nzdusd",
+"scope": "market"
+},
+{
+"term": "kiwi/dollar",
+"canonical": "nzdusd",
+"scope": "market"
+},
+{
+"term": "sgd/cnh",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sgd-cnh",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sgd cnh",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar-yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar/yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar-offshore yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar offshore yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar/offshore yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar-renminbi",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar renminbi",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar/renminbi",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar-rmb",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar rmb",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing dollar/rmb",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing/yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing-offshore yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing offshore yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing/offshore yuan",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing-renminbi",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing renminbi",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing/renminbi",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing-rmb",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing rmb",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sing/rmb",
+"canonical": "sgdcnh",
+"scope": "market"
+},
+{
+"term": "sgd/jpy",
+"canonical": "sgdjpy",
+"scope": "market"
+},
+{
+"term": "sgd-jpy",
+"canonical": "sgdjpy",
+"scope": "market"
+},
+{
+"term": "sgd jpy",
+"canonical": "sgdjpy",
+"scope": "market"
+},
+{
+"term": "sing dollar-yen",
+"canonical": "sgdjpy",
+"scope": "market"
+},
+{
+"term": "sing dollar yen",
+"canonical": "sgdjpy",
+"scope": "market"
+},
+{
+"term": "sing dollar/yen",
+"canonical": "sgdjpy",
+"scope": "market"
+},
+{
+"term": "sing/yen",
+"canonical": "sgdjpy",
+"scope": "market"
+},
+{
+"term": "usd/bdt",
+"canonical": "usdbdt",
+"scope": "market"
+},
+{
+"term": "usd-bdt",
+"canonical": "usdbdt",
+"scope": "market"
+},
+{
+"term": "usd bdt",
+"canonical": "usdbdt",
+"scope": "market"
+},
+{
+"term": "usd/cad",
+"canonical": "usdcad",
+"scope": "market"
+},
+{
+"term": "usd-cad",
+"canonical": "usdcad",
+"scope": "market"
+},
+{
+"term": "usd cad",
+"canonical": "usdcad",
+"scope": "market"
+},
+{
+"term": "dollar-loonie",
+"canonical": "usdcad",
+"scope": "market"
+},
+{
+"term": "dollar loonie",
+"canonical": "usdcad",
+"scope": "market"
+},
+{
+"term": "dollar/loonie",
+"canonical": "usdcad",
+"scope": "market"
+},
+{
+"term": "usd/chf",
+"canonical": "usdchf",
+"scope": "market"
+},
+{
+"term": "usd-chf",
+"canonical": "usdchf",
+"scope": "market"
+},
+{
+"term": "usd chf",
+"canonical": "usdchf",
+"scope": "market"
+},
+{
+"term": "dollar-swissy",
+"canonical": "usdchf",
+"scope": "market"
+},
+{
+"term": "dollar swissy",
+"canonical": "usdchf",
+"scope": "market"
+},
+{
+"term": "dollar/swissy",
+"canonical": "usdchf",
+"scope": "market"
+},
+{
+"term": "dollar-franc",
+"canonical": "usdchf",
+"scope": "market"
+},
+{
+"term": "dollar franc",
+"canonical": "usdchf",
+"scope": "market"
+},
+{
+"term": "dollar/franc",
+"canonical": "usdchf",
+"scope": "market"
+},
+{
+"term": "usd/cnh",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "usd-cnh",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "usd cnh",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar-yuan",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar yuan",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar/yuan",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar-offshore yuan",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar offshore yuan",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar/offshore yuan",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar-renminbi",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar renminbi",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar/renminbi",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar-rmb",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar rmb",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "dollar/rmb",
+"canonical": "usdcnh",
+"scope": "market"
+},
+{
+"term": "usd/hkd",
+"canonical": "usdhkd",
+"scope": "market"
+},
+{
+"term": "usd-hkd",
+"canonical": "usdhkd",
+"scope": "market"
+},
+{
+"term": "usd hkd",
+"canonical": "usdhkd",
+"scope": "market"
+},
+{
+"term": "dollar-hong kong dollar",
+"canonical": "usdhkd",
+"scope": "market"
+},
+{
+"term": "dollar hong kong dollar",
+"canonical": "usdhkd",
+"scope": "market"
+},
+{
+"term": "dollar/hong kong dollar",
+"canonical": "usdhkd",
+"scope": "market"
+},
+{
+"term": "usd/idr",
+"canonical": "usdidr",
+"scope": "market"
+},
+{
+"term": "usd-idr",
+"canonical": "usdidr",
+"scope": "market"
+},
+{
+"term": "usd idr",
+"canonical": "usdidr",
+"scope": "market"
+},
+{
+"term": "usd/inr",
+"canonical": "usdinr",
+"scope": "market"
+},
+{
+"term": "usd-inr",
+"canonical": "usdinr",
+"scope": "market"
+},
+{
+"term": "usd inr",
+"canonical": "usdinr",
+"scope": "market"
+},
+{
+"term": "usd/jpy",
+"canonical": "usdjpy",
+"scope": "market"
+},
+{
+"term": "usd-jpy",
+"canonical": "usdjpy",
+"scope": "market"
+},
+{
+"term": "usd jpy",
+"canonical": "usdjpy",
+"scope": "market"
+},
+{
+"term": "dollar-yen",
+"canonical": "usdjpy",
+"scope": "market"
+},
+{
+"term": "dollar yen",
+"canonical": "usdjpy",
+"scope": "market"
+},
+{
+"term": "dollar/yen",
+"canonical": "usdjpy",
+"scope": "market"
+},
+{
+"term": "usd/krw",
+"canonical": "usdkrw",
+"scope": "market"
+},
+{
+"term": "usd-krw",
+"canonical": "usdkrw",
+"scope": "market"
+},
+{
+"term": "usd krw",
+"canonical": "usdkrw",
+"scope": "market"
+},
+{
+"term": "usd/lkr",
+"canonical": "usdlkr",
+"scope": "market"
+},
+{
+"term": "usd-lkr",
+"canonical": "usdlkr",
+"scope": "market"
+},
+{
+"term": "usd lkr",
+"canonical": "usdlkr",
+"scope": "market"
+},
+{
+"term": "usd/myr",
+"canonical": "usdmyr",
+"scope": "market"
+},
+{
+"term": "usd-myr",
+"canonical": "usdmyr",
+"scope": "market"
+},
+{
+"term": "usd myr",
+"canonical": "usdmyr",
+"scope": "market"
+},
+{
+"term": "usd/php",
+"canonical": "usdphp",
+"scope": "market"
+},
+{
+"term": "usd-php",
+"canonical": "usdphp",
+"scope": "market"
+},
+{
+"term": "usd php",
+"canonical": "usdphp",
+"scope": "market"
+},
+{
+"term": "usd/sgd",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "usd-sgd",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "usd sgd",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "dollar-sing dollar",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "dollar sing dollar",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "dollar/sing dollar",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "dollar-sing",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "dollar sing",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "dollar/sing",
+"canonical": "usdsgd",
+"scope": "market"
+},
+{
+"term": "usd/thb",
+"canonical": "usdthb",
+"scope": "market"
+},
+{
+"term": "usd-thb",
+"canonical": "usdthb",
+"scope": "market"
+},
+{
+"term": "usd thb",
+"canonical": "usdthb",
+"scope": "market"
+},
+{
+"term": "usd/twd",
+"canonical": "usdtwd",
+"scope": "market"
+},
+{
+"term": "usd-twd",
+"canonical": "usdtwd",
+"scope": "market"
+},
+{
+"term": "usd twd",
+"canonical": "usdtwd",
+"scope": "market"
+},
+{
+"term": "usd/vnd",
+"canonical": "usdvnd",
+"scope": "market"
+},
+{
+"term": "usd-vnd",
+"canonical": "usdvnd",
+"scope": "market"
+},
+{
+"term": "usd vnd",
+"canonical": "usdvnd",
+"scope": "market"
+},
+{
+"term": "xag/usd",
+"canonical": "xagusd",
+"scope": "market"
+},
+{
+"term": "xag-usd",
+"canonical": "xagusd",
+"scope": "market"
+},
+{
+"term": "xag usd",
+"canonical": "xagusd",
+"scope": "market"
+},
+{
+"term": "silver-dollar",
+"canonical": "xagusd",
+"scope": "market"
+},
+{
+"term": "silver dollar",
+"canonical": "xagusd",
+"scope": "market"
+},
+{
+"term": "silver/dollar",
+"canonical": "xagusd",
+"scope": "market"
+},
+{
+"term": "xau/cnh",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "xau-cnh",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "xau cnh",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold-yuan",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold yuan",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold/yuan",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold-offshore yuan",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold offshore yuan",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold/offshore yuan",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold-renminbi",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold renminbi",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold/renminbi",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold-rmb",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold rmb",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "gold/rmb",
+"canonical": "xaucnh",
+"scope": "market"
+},
+{
+"term": "xau/eur",
+"canonical": "xaueur",
+"scope": "market"
+},
+{
+"term": "xau-eur",
+"canonical": "xaueur",
+"scope": "market"
+},
+{
+"term": "xau eur",
+"canonical": "xaueur",
+"scope": "market"
+},
+{
+"term": "gold-euro",
+"canonical": "xaueur",
+"scope": "market"
+},
+{
+"term": "gold euro",
+"canonical": "xaueur",
+"scope": "market"
+},
+{
+"term": "gold/euro",
+"canonical": "xaueur",
+"scope": "market"
+},
+{
+"term": "xau/jpy",
+"canonical": "xaujpy",
+"scope": "market"
+},
+{
+"term": "xau-jpy",
+"canonical": "xaujpy",
+"scope": "market"
+},
+{
+"term": "xau jpy",
+"canonical": "xaujpy",
+"scope": "market"
+},
+{
+"term": "gold-yen",
+"canonical": "xaujpy",
+"scope": "market"
+},
+{
+"term": "gold yen",
+"canonical": "xaujpy",
+"scope": "market"
+},
+{
+"term": "gold/yen",
+"canonical": "xaujpy",
+"scope": "market"
+},
+{
+"term": "xau/sgd",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "xau-sgd",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "xau sgd",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "gold-sing dollar",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "gold sing dollar",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "gold/sing dollar",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "gold-sing",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "gold sing",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "gold/sing",
+"canonical": "xausgd",
+"scope": "market"
+},
+{
+"term": "xau/usd",
+"canonical": "xauusd",
+"scope": "market"
+},
+{
+"term": "xau-usd",
+"canonical": "xauusd",
+"scope": "market"
+},
+{
+"term": "xau usd",
+"canonical": "xauusd",
+"scope": "market"
+},
+{
+"term": "gold-dollar",
+"canonical": "xauusd",
+"scope": "market"
+},
+{
+"term": "gold dollar",
+"canonical": "xauusd",
+"scope": "market"
+},
+{
+"term": "gold/dollar",
+"canonical": "xauusd",
+"scope": "market"
+},
+{
+"term": "xau/xag",
+"canonical": "xauxag",
+"scope": "market"
+},
+{
+"term": "xau-xag",
+"canonical": "xauxag",
+"scope": "market"
+},
+{
+"term": "xau xag",
+"canonical": "xauxag",
+"scope": "market"
+},
+{
+"term": "gold-silver",
+"canonical": "xauxag",
+"scope": "market"
+},
+{
+"term": "gold silver",
+"canonical": "xauxag",
+"scope": "market"
+},
+{
+"term": "gold/silver",
+"canonical": "xauxag",
+"scope": "market"
+},
+{
+"term": "xpd/usd",
+"canonical": "xpdusd",
+"scope": "market"
+},
+{
+"term": "xpd-usd",
+"canonical": "xpdusd",
+"scope": "market"
+},
+{
+"term": "xpd usd",
+"canonical": "xpdusd",
+"scope": "market"
+},
+{
+"term": "xpt/usd",
+"canonical": "xptusd",
+"scope": "market"
+},
+{
+"term": "xpt-usd",
+"canonical": "xptusd",
+"scope": "market"
+},
+{
+"term": "xpt usd",
+"canonical": "xptusd",
+"scope": "market"
+},
+{
+"term": "one-month",
+"canonical": "1m",
+"scope": "tenor"
+},
+{
+"term": "one month",
+"canonical": "1m",
+"scope": "tenor"
+},
+{
+"term": "1-month",
+"canonical": "1m",
+"scope": "tenor"
+},
+{
+"term": "1 month",
+"canonical": "1m",
+"scope": "tenor"
+},
+{
+"term": "three-month",
+"canonical": "3m",
+"scope": "tenor"
+},
+{
+"term": "three month",
+"canonical": "3m",
+"scope": "tenor"
+},
+{
+"term": "3-month",
+"canonical": "3m",
+"scope": "tenor"
+},
+{
+"term": "3 month",
+"canonical": "3m",
+"scope": "tenor"
+},
+{
+"term": "quarter",
+"canonical": "3m",
+"scope": "tenor"
+},
+{
+"term": "six-month",
+"canonical": "6m",
+"scope": "tenor"
+},
+{
+"term": "six month",
+"canonical": "6m",
+"scope": "tenor"
+},
+{
+"term": "6-month",
+"canonical": "6m",
+"scope": "tenor"
+},
+{
+"term": "6 month",
+"canonical": "6m",
+"scope": "tenor"
+},
+{
+"term": "half a year",
+"canonical": "6m",
+"scope": "tenor"
+},
+{
+"term": "half-year",
+"canonical": "6m",
+"scope": "tenor"
+},
+{
+"term": "nine-month",
+"canonical": "9m",
+"scope": "tenor"
+},
+{
+"term": "nine month",
+"canonical": "9m",
+"scope": "tenor"
+},
+{
+"term": "9-month",
+"canonical": "9m",
+"scope": "tenor"
+},
+{
+"term": "one-year",
+"canonical": "12m",
+"scope": "tenor"
+},
+{
+"term": "one year",
+"canonical": "12m",
+"scope": "tenor"
+},
+{
+"term": "1-year",
+"canonical": "12m",
+"scope": "tenor"
+},
+{
+"term": "1 year",
+"canonical": "12m",
+"scope": "tenor"
+},
+{
+"term": "1y",
+"canonical": "12m",
+"scope": "tenor"
+},
+{
+"term": "twelve-month",
+"canonical": "12m",
+"scope": "tenor"
+},
+{
+"term": "12-month",
+"canonical": "12m",
+"scope": "tenor"
+},
+{
+"term": "12 month",
+"canonical": "12m",
+"scope": "tenor"
+},
+{
+"term": "a year",
+"canonical": "12m",
+"scope": "tenor"
+},
+{
+"term": "eighteen-month",
+"canonical": "18m",
+"scope": "tenor"
+},
+{
+"term": "18-month",
+"canonical": "18m",
+"scope": "tenor"
+},
+{
+"term": "18 month",
+"canonical": "18m",
+"scope": "tenor"
+},
+{
+"term": "a year and a half",
+"canonical": "18m",
+"scope": "tenor"
+},
+{
+"term": "two-year",
+"canonical": "24m",
+"scope": "tenor"
+},
+{
+"term": "two year",
+"canonical": "24m",
+"scope": "tenor"
+},
+{
+"term": "2-year",
+"canonical": "24m",
+"scope": "tenor"
+},
+{
+"term": "2 year",
+"canonical": "24m",
+"scope": "tenor"
+},
+{
+"term": "2y",
+"canonical": "24m",
+"scope": "tenor"
+},
+{
+"term": "24-month",
+"canonical": "24m",
+"scope": "tenor"
+},
+{
+"term": "three-year",
+"canonical": "36m",
+"scope": "tenor"
+},
+{
+"term": "three year",
+"canonical": "36m",
+"scope": "tenor"
+},
+{
+"term": "3-year",
+"canonical": "36m",
+"scope": "tenor"
+},
+{
+"term": "3 year",
+"canonical": "36m",
+"scope": "tenor"
+},
+{
+"term": "3y",
+"canonical": "36m",
+"scope": "tenor"
+},
+{
+"term": "36-month",
+"canonical": "36m",
+"scope": "tenor"
+},
+{
+"term": "dual range accrual note",
+"canonical": "dual range accrual",
+"scope": "product"
+},
+{
+"term": "dran",
+"canonical": "dual range accrual",
+"scope": "product"
+},
+{
+"term": "range accrual",
+"canonical": "dual range accrual",
+"scope": "product"
+},
+{
+"term": "bullion-linked note",
+"canonical": "bullion linked note",
+"scope": "product"
+},
+{
+"term": "bln",
+"canonical": "bullion linked note",
+"scope": "product"
+},
+{
+"term": "silver-linked note",
+"canonical": "bullion linked note",
+"scope": "product"
+},
+{
+"term": "gold-linked note",
+"canonical": "bullion linked note",
+"scope": "product"
+},
+{
+"term": "dual currency investment",
+"canonical": "dual currency",
+"scope": "product"
+},
+{
+"term": "dual currency deposit",
+"canonical": "dual currency",
+"scope": "product"
+},
+{
+"term": "dci",
+"canonical": "dual currency",
+"scope": "product"
+},
+{
+"term": "dcd",
+"canonical": "dual currency",
+"scope": "product"
+},
+{
+"term": "digital deposit",
+"canonical": "digital",
+"scope": "product"
+},
+{
+"term": "digital structured deposit",
+"canonical": "digital",
+"scope": "product"
+},
+{
+"term": "binary",
+"canonical": "digital",
+"scope": "product"
+},
+{
+"term": "decu",
+"canonical": "decumulator",
+"scope": "product"
+},
+{
+"term": "dq",
+"canonical": "decumulator",
+"scope": "product"
+},
+{
+"term": "double-no-touch",
+"canonical": "double no touch",
+"scope": "product"
+},
+{
+"term": "pitch book",
+"canonical": "pitchbook",
+"scope": "product"
+},
+{
+"term": "pitch deck",
+"canonical": "pitchbook",
+"scope": "product"
+},
+{
+"term": "trade expressions",
+"canonical": "pitchbook",
+"scope": "product"
+},
+{
+"term": "termsheet",
+"canonical": "term sheet",
+"scope": "product"
+},
+{
+"term": "term-sheet",
+"canonical": "term sheet",
+"scope": "product"
+}
+]

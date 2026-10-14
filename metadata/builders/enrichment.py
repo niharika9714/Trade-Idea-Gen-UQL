@@ -3,9 +3,16 @@ import collections, hashlib, json, os, re, urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from metadata.database import connect
+from metadata import terminology
 
 STOP=set('the and for with from this that have will would should were which their into about these those our your are has was its can also not but via than over under between during each all per one two three they them being more most such only very what when where while using report research analysis company group data financial market table figure source page document note investment performance'.split())
 ALIASES={'USD':['US dollar','dollar','greenback'],'D05':['DBS','DBS Group'],'O39':['OCBC'],'U11':['UOB'],'SGD':['Singapore dollar'],'FX':['foreign exchange'],'NIM':['net interest margin'],'ROE':['return on equity'],'Fed':['Federal Reserve'],'BoJ':['Bank of Japan']}
+
+# Tuned fork (fix 2): sentences that say nothing about a document's subject never become its summary. On the desk
+# mail set the extractive overview was often a mail's disclaimer.
+BOILERPLATE=('not investment advice','does not consider','investment objectives','financial situation','for professional',
+ 'for internal','confidential','disclaimer','past performance','not an offer','solicitation','recipient','this document is',
+ 'this note is','this communication','unsubscribe','privileged','intended only','do not forward','for information only')
 
 def chunks(text, n=12000):
     return [text[i:i+n] for i in range(0,len(text),n)] or ['']
@@ -24,6 +31,9 @@ def extract(path):
         from pptx import Presentation
         from pptx.enum.shapes import MSO_SHAPE_TYPE
         prs=Presentation(str(path));slides=len(prs.slides);author=prs.core_properties.author or None
+        # Tuned fork (fix 2): a deck's own created/modified date (the unedited reader dated no deck).
+        _d=prs.core_properties.created or prs.core_properties.modified
+        date=_d.isoformat() if _d else None
         for i,slide in enumerate(prs.slides,1):
             parts=[]
             for j,shape in enumerate(slide.shapes,1):
@@ -32,11 +42,17 @@ def extract(path):
                     parts.extend(' | '.join(cell.text for cell in row.cells) for row in shape.table.rows)
                     objects.append(('table',{'slide':i,'shape':j},shape.name))
                 if shape.has_chart: objects.append(('chart',{'slide':i,'shape':j},shape.name))
-                if shape.shape_type==MSO_SHAPE_TYPE.PICTURE: objects.append(('image',{'slide':i,'shape':j},shape.name))
+                try:
+                    is_picture=shape.shape_type==MSO_SHAPE_TYPE.PICTURE
+                except NotImplementedError:   # tuned fork (fix 2): an untyped shape failed the whole deck
+                    is_picture=False
+                if is_picture: objects.append(('image',{'slide':i,'shape':j},shape.name))
             sections.append((i,{'slide':i},'\n'.join(parts)))
     elif ext=='.docx':
         from docx import Document
         doc=Document(str(path));author=doc.core_properties.author or None
+        _d=doc.core_properties.created or doc.core_properties.modified
+        date=_d.isoformat() if _d else None
         body=[]
         for para in doc.paragraphs:
             if para.text.strip(): body.append(para.text)
@@ -72,7 +88,9 @@ def llm_json(prompt,model=None):
 
 def enrich(root, force=False):
     root=Path(root); now=datetime.now(timezone.utc).isoformat(); counts=collections.Counter()
+    vocab=terminology.load(); vgroups=terminology.groups(vocab)
     with connect() as c:
+        counts['terminology']=terminology.write_table(c,vocab)   # tuned fork (fix 1)
         rows=c.execute('SELECT * FROM files ORDER BY relative_path').fetchall()
         for row in rows:
             if row['ingestion_status']=='ENRICHED' and not force: counts['unchanged']+=1;continue
@@ -93,9 +111,11 @@ def enrich(root, force=False):
                     if any(re.search(r'(?<!\w)'+re.escape(x)+r'(?!\w)',full,re.I) for x in [key]+aliases): entities.append(key)
                 # Financial metrics and company identifiers should be discoverable at document level.
                 entities=list(dict.fromkeys(entities+[t.upper() for t in ('nim','roe','roa','cet1','npl','eps','d05','o39','u11') if re.search(r'(?<!\w)'+t+r'(?!\w)',full,re.I)]))
+                # Tuned fork (fix 1): the vocabulary's market, product and tenor groups this document mentions.
+                entities=list(dict.fromkeys(entities+terminology.found(full+' '+path.stem,vgroups)))
                 # Deterministic extractive summaries are labeled as such; do not claim synthesis.
                 sentences=re.split(r'(?<=[.!?])\s+|\n+',full)
-                candidates=[re.sub(r'\s+',' ',x).strip() for x in sentences if len(x.strip())>=35 and not any(b in x.lower() for b in ('synthetic dataset','prototype testing','artificially generated'))]
+                candidates=[re.sub(r'\s+',' ',x).strip() for x in sentences if len(x.strip())>=35 and not any(b in x.lower() for b in ('synthetic dataset','prototype testing','artificially generated')+BOILERPLATE)]
                 scored=sorted(enumerate(candidates),key=lambda z:(-sum(3 for t in finance if re.search(r'(?<!\w)'+re.escape(t)+r'(?!\w)',z[1],re.I)),-min(len(z[1]),300),z[0]))
                 highlights=[]
                 for _,candidate in scored:
@@ -103,6 +123,9 @@ def enrich(root, force=False):
                     if candidate not in highlights: highlights.append(candidate)
                     if len(highlights)>=5: break
                 synopsis=('Extractive overview: '+' '.join(highlights[:3]))[:1800] if highlights else ('Extracted text: '+full[:800])
+                # Tuned fork (fix 2): a mail's subject leads its summary; it says what the mail is about.
+                _subj=re.match(r'Subject:\s*(.+)',full)
+                if _subj: synopsis=('Subject: '+_subj.group(1).strip()+'. '+synopsis)[:1900]
                 if path.suffix.lower() in ('.png','.jpeg','.jpg'):
                     synopsis='Image inventory only: '+(sections[0][2] if sections else path.name)+'; visual interpretation not performed'
                     highlights=[]

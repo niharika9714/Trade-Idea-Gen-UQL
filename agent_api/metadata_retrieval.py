@@ -53,6 +53,15 @@ class MetadataRetrieval:
     def search_documents(self,query,limit=12):
         words=list(dict.fromkeys(w.lower() for w in re.findall(r'[\w]+',query) if len(w)>1))[:24]
         with closing(self._connect()) as c:
+            # Tuned fork (fix 1): every spelling of each market, product or tenor the query names, from the catalog's
+            # terminology table, so "one-year USD/SGD double-no-touch" also searches "12m", "usdsgd", "dnt".
+            try:
+                vocab=[{'term':r['term'],'canonical':r['canonical_term']} for r in c.execute('SELECT term,canonical_term FROM terminology')]
+            except sqlite3.Error:
+                vocab=[]
+            if vocab:
+                from metadata import terminology
+                words=list(dict.fromkeys(words+terminology.expand(query,terminology.groups(vocab))))[:64]
             files=[dict(r) for r in c.execute('SELECT file_id,source_id,relative_path,file_name,file_type,summary,document_date,ingestion_status FROM files LIMIT 2000')]
             scores={f['file_id']:0. for f in files}
             for f in files:
