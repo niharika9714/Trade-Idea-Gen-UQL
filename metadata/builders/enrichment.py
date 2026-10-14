@@ -155,4 +155,32 @@ def enrich(root, force=False):
                 counts['enriched']+=1
             except Exception as exc:
                 c.execute('UPDATE files SET ingestion_status=? WHERE file_id=?',('ERROR:'+str(exc)[:180],fid));counts['errors']+=1
+        counts['attachment_links']=link_attachments(c)   # tuned fork (fix 6)
     return dict(counts)
+
+
+def link_attachments(c):
+    """Tuned fork (fix 6): link each file to the attachment files it lists (an .msg's attachments, or a mail's
+    "Attachments:" line), as concept_relationships rows 'file:<mail>' -has_attachment-> 'file:<attachment>'. The two
+    share their subject and tags: the attachment's summary says which mail it came on, and each carries the other's
+    entities, so finding one finds the other. A mail's facts are often in its attachment."""
+    files={r['file_name']:r['file_id'] for r in c.execute('SELECT file_id,file_name FROM files')}
+    c.execute("DELETE FROM concept_relationships WHERE source='tuned-attachments'")
+    n=0
+    for r in c.execute("SELECT file_id,title FROM file_objects WHERE object_type='attachment'").fetchall():
+        name=str(r['title'] or '').strip()
+        att=files.get(name) or next((fid for fname,fid in files.items() if fname.endswith('__'+name)),None)
+        if not att or att==r['file_id']:
+            continue
+        c.execute("INSERT OR IGNORE INTO concept_relationships(source_concept,target_concept,relationship_type,weight,source) "
+                  "VALUES(?,?,?,?,?)",('file:'+r['file_id'],'file:'+att,'has_attachment',1.0,'tuned-attachments'))
+        mail=c.execute('SELECT summary FROM files WHERE file_id=?',(r['file_id'],)).fetchone()
+        subj=re.match(r'Subject:\s*([^.]+)',str(mail['summary'] or '')) if mail else None
+        if subj:
+            c.execute("UPDATE files SET summary=? || coalesce(summary,'') WHERE file_id=? AND coalesce(summary,'') NOT LIKE 'Attached to mail:%'",
+                      ('Attached to mail: '+subj.group(1).strip()+'. ',att))
+        for a,b in ((r['file_id'],att),(att,r['file_id'])):
+            c.execute("INSERT OR IGNORE INTO file_entities(file_id,entity,entity_type,weight) "
+                      "SELECT ?,entity,entity_type,weight FROM file_entities WHERE file_id=?",(a,b))
+        n+=1
+    return n

@@ -1,5 +1,5 @@
 """Read-only metadata-first semantic discovery for SQL and registered documents."""
-import json, re, sqlite3
+import json, math, re, sqlite3
 from contextlib import closing
 from pathlib import Path
 
@@ -69,13 +69,43 @@ class MetadataRetrieval:
                 scores[f['file_id']]+=sum(1.5 for w in words if w in text)
             if words:
                 marks=','.join('?' for _ in words)
-                for r in c.execute(f'SELECT file_id,term,weight FROM file_terms WHERE lower(term) IN ({marks})',words):
-                    if r['file_id'] in scores: scores[r['file_id']]+=float(r['weight'] or 0)
-                for r in c.execute(f'SELECT file_id,entity,weight FROM file_entities WHERE lower(entity) IN ({marks})',words):
-                    if r['file_id'] in scores: scores[r['file_id']]+=3*float(r['weight'] or 0)
+                # Tuned fork (fix 5): BM25 on the body terms. The unedited score added each matched term's frequency
+                # (x3 for finance words) with no regard to length, so one long deck that mentions every product was
+                # listed first for 6 of 15 mail questions. Now a match counts by how rare the word is across the
+                # catalog, saturates with repetition, and is tempered by the document's length against the average.
+                n_docs=max(1,len(files))
+                dl={r[0]:float(r[1] or 0) for r in c.execute('SELECT file_id,SUM(coalesce(frequency,1)) FROM file_terms GROUP BY file_id')}
+                avgdl=(sum(dl.values())/len(dl)) if dl else 1.0
+                df={r[0]:r[1] for r in c.execute(f'SELECT lower(term),COUNT(DISTINCT file_id) FROM file_terms WHERE lower(term) IN ({marks}) GROUP BY lower(term)',words)}
+                k1,b=1.2,0.75
+                for r in c.execute(f'SELECT file_id,lower(term) t,frequency FROM file_terms WHERE lower(term) IN ({marks})',words):
+                    if r['file_id'] not in scores: continue
+                    tf=float(r['frequency'] or 1); L=dl.get(r['file_id'],avgdl)
+                    idf=math.log(1+(n_docs-df.get(r['t'],0)+0.5)/(df.get(r['t'],0)+0.5))
+                    scores[r['file_id']]+=idf*tf*(k1+1)/(tf+k1*(1-b+b*L/avgdl))
+                # entity tags count by rarity too: a tag most documents carry (USD, FX) says little
+                edf={r[0]:r[1] for r in c.execute(f'SELECT lower(entity),COUNT(DISTINCT file_id) FROM file_entities WHERE lower(entity) IN ({marks}) GROUP BY lower(entity)',words)}
+                for r in c.execute(f'SELECT DISTINCT file_id,lower(entity) e FROM file_entities WHERE lower(entity) IN ({marks})',words):
+                    if r['file_id'] in scores:
+                        scores[r['file_id']]+=2.0*math.log(1+(n_docs-edf.get(r['e'],0)+0.5)/(edf.get(r['e'],0)+0.5))
+            # Tuned fork (fix 6): a mail and its attachments share their best score, and each result lists the others.
+            links={}
+            try:
+                for r in c.execute("SELECT source_concept,target_concept FROM concept_relationships WHERE relationship_type='has_attachment'"):
+                    a,t=str(r[0])[5:],str(r[1])[5:]
+                    links.setdefault(a,set()).add(t); links.setdefault(t,set()).add(a)
+            except sqlite3.Error:
+                pass
+            base=dict(scores)
+            for fid,others in links.items():
+                if fid in scores:
+                    scores[fid]=max(base[fid],0.9*max((base.get(o,0.) for o in others),default=0.))
+            names={f['file_id']:f['file_name'] for f in files}
             ranked=sorted((f for f in files if scores[f['file_id']]>0),key=lambda f:-scores[f['file_id']])[:max(1,min(limit,30))]
             for f in ranked:
                 f['score']=round(scores[f['file_id']],3)
+                if f['file_id'] in links:
+                    f['linked_files']=[{'file_id':o,'file_name':names.get(o)} for o in sorted(links[f['file_id']])]
                 f['sections']=[dict(r) for r in c.execute('SELECT section_id,section_order,locator_json,title,summary FROM file_sections WHERE file_id=? ORDER BY section_order LIMIT 30',(f['file_id'],))]
                 f['objects']=[dict(r) for r in c.execute('SELECT object_id,object_type,locator_json,title,description FROM file_objects WHERE file_id=? LIMIT 30',(f['file_id'],))]
         return {'query':query,'files':ranked,'metadata_only':True}
