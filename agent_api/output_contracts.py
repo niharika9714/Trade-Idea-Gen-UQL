@@ -107,4 +107,14 @@ def response_format(payload):
                                      "minItems": len(payload['required_citation_ids']),
                                      "uniqueItems": True},
                     "limitations": {"type": "array", "items": {"type": "string"}}}}
+    if "missing_requirements" in payload and "tool_catalog" in payload:
+        # Tuned fork (fix 3a): the tool-choice step had no schema ("json"), and a reply that was not a tool call from
+        # the catalog ended the turn after two tries. A final answer stays disallowed while requirements are missing.
+        names = [t.get("name") for t in payload.get("tool_catalog") or [] if t.get("name")]
+        return {"anyOf": [
+            {"type": "object", "additionalProperties": False, "required": ["action", "tool", "args"],
+             "properties": {"action": {"const": "tool"}, "tool": {"enum": names},
+                            "args": {"type": "object"}, "reason": {"type": "string"}}},
+            {"type": "object", "additionalProperties": False, "required": ["action", "question"],
+             "properties": {"action": {"const": "clarify"}, "question": {"type": "string"}}}]}
     return "json"

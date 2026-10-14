@@ -1372,11 +1372,31 @@ return a complete valid JSON object only. No illustrative domain examples.""",
         # Audit outcome coverage before running any tools. A valid obligation
         # schema does not imply that the planner represented the user's goals.
         try:
+            repair_error=None
             uncovered = self._check_plan_completeness(query,jev,uql,requirements)
             if uncovered:
                 print(f"[AGENT] Plan incomplete; repairing goals={uncovered}", flush=True)
-                requirements = self._repair_incomplete_plan(query,as_of,jev,uql,requirements,uncovered)
-                uncovered = self._check_plan_completeness(query,jev,uql,requirements)
+                try:
+                    requirements = self._repair_incomplete_plan(query,as_of,jev,uql,requirements,uncovered)
+                    uncovered = self._check_plan_completeness(query,jev,uql,requirements)
+                except AgentError as exc:
+                    repair_error=str(exc)
+            doc_tools={'search_documents','search_catalog','get_document_units','inspect_document'}
+            if uncovered and any(r.get('kind')=='source' and r.get('tool') in doc_tools for r in requirements):
+                # Tuned fork (fix 3c): in a plan that already searches documents, a goal no requirement covers gets a
+                # mandatory document-search obligation, rather than ending the turn before any tool runs. A SQL plan
+                # whose repair fails still blocks (TIG's own design, test_schema_only_observation_plan_blocks_...).
+                # The evidence gate is unchanged: the final answer still needs evidence for every requirement.
+                ids=[int(r['id'][1:]) for r in requirements if str(r.get('id','')).startswith('r') and str(r['id'][1:]).isdigit()]
+                nxt=max(ids or [0])+1
+                added=[]
+                for k,gi in enumerate(uncovered):
+                    added.append({"id":"r"+str(nxt+k),"kind":"source","tool":"search_documents",
+                                  "description":"Find and read the documents for: "+str(jev['evidence_goals'][gi])})
+                requirements=self._requirements([dict(r) for r in requirements]+added)
+                trace.append({"phase":"PLAN_GOAL_FALLBACK","goals":[jev['evidence_goals'][g] for g in uncovered],
+                              "added":[a["id"] for a in added],"repair_error":repair_error})
+                uncovered=[]
             if uncovered:
                 return {"status":"BLOCKED_INCOMPLETE_RESEARCH_PLAN", "answer":None,
                         "limitations":["UNCOVERED_JEV_GOAL:"+str(i)+":"+jev['evidence_goals'][i] for i in uncovered],
@@ -1474,9 +1494,14 @@ research and proceed to final synthesis.
                         "uql_plan": uql, "investment_recommendation_authorized": False}
             name, args = decision.get("tool"), decision.get("args", {})
             if decision.get("action") != "tool" or name not in known or not isinstance(args, dict):
-                trace.append({"step": i+1, "error": "INVALID_ACTION_OR_PREMATURE_FINAL"})
+                # Tuned fork (fix 3b): say why, so the next decision can correct it, and allow a third try.
+                trace.append({"step": i+1, "error": "INVALID_ACTION_OR_PREMATURE_FINAL",
+                              "reason": ("Rejected: reply must be {\"action\": \"tool\", \"tool\": <a name from "
+                                         "tool_catalog>, \"args\": {...}}; got action="
+                                         + repr(decision.get("action")) + ", tool=" + repr(name)
+                                         + ". A final answer is not allowed while requirements are missing.")})
                 no_progress += 1
-                if no_progress >= 2: break
+                if no_progress >= 3: break
                 continue
             # Only an explicit API-level as_of may trigger point-in-time retrieval.
             # A historical date range is not publication-time certification.
